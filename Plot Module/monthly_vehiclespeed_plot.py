@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 #Load dataset
-df = pd.read_csv('./MachineLearning/FinalProject_Dataset.csv', index_col = [1], parse_dates = ['Date'])
+df = pd.read_csv('./MachineLearning/User1_Dataset.csv', index_col = [1], parse_dates = ['Date'])
 print(df.head())
 
 #Plot monthly maximum speed
