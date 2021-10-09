@@ -3,25 +3,17 @@
 #Modify existing data
 import pandas as pd
 import numpy as np
-from sklearn.impute import KNNImputer
 
-df = pd.read_csv('./NewData/Car-Care_Dataset.csv')
+df = pd.read_csv('./Preprocessing/NewData/Car-Care_Dataset.csv')
 #Drop time column
 df.drop(['time', 'Insurance Fee'], axis = 1, inplace = True)
 
 #Set column datatype to int
-df['Distance travelled (km)'] = df['Distance travelled (km)'].astype(int)
+df = df.astype(int)
 
 val_drop = df[df['Distance travelled (km)'] < 2].index
 print(val_drop)
 df.drop(val_drop, inplace = True)
-
-#KNN imputer
-imputer = KNNImputer(n_neighbors = 15)
-df_filled = imputer.fit_transform(df)
-
-df = pd.DataFrame(df_filled, columns = df.columns, index = df.index)
-df.reset_index(inplace = True)
 
 #Add date column
 df['Date'] = pd.date_range(start = '10/01/2020', periods = len(df), freq = 'D')
