@@ -12,7 +12,7 @@ from sklearn.preprocessing import StandardScaler
 
 #Open dataset
 df = pd.read_csv('./MachineLearning/User2_Dataset.csv', index_col = [0])
-print(df.columns)
+print(df.columns, '\n')
 
 #Show heatmap of feature correlation
 dfcorr = df.corr()
@@ -49,6 +49,14 @@ y_pred = model.predict(x_test)
 #Compare actual value with predicted value
 data = pd.DataFrame({'Actual': y_test.flatten(), 'Predicted': y_pred.flatten()})
 #print(data)
+
+#Show predicted result
+plt.scatter(data['Actual'], data['Predicted'], color = 'blue')
+plt.plot(data['Predicted'], data['Predicted'], color = 'red', linewidth = 2)
+plt.title('Predicted Driving Distance')
+plt.xlabel('Actual Value')
+plt.ylabel('Predicted Value')
+plt.show()
 
 # Visualize the comparison results.
 df1 = data.head(30)
