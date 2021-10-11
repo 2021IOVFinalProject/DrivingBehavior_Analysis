@@ -41,14 +41,15 @@ class Contact(models.Model):
 	#Vehicle_speed = models.FloatField()
 
 class File(models.Model):
-	time = models.DateTimeField()
+	Date = models.DateTimeField()
 	Average_speed = models.FloatField()
 	Distance_travelled = models.FloatField()
 	Engine_RPM = models.FloatField()
 	Fuel_used = models.FloatField()
 	Vehicle_speed =  models.FloatField()
 	Driver_Type = models.IntegerField()
-	Insurance_Fee = models.IntegerField()
 
+class DatePicker(models.Model):
+    date = models.DateField()
 
 

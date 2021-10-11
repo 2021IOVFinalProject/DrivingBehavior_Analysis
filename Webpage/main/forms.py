@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from .models import Contact, Profile # add this for user profile
+from .models import Contact, DatePicker, Profile # add this for user profile
 
 # Create your forms here.
 
@@ -34,8 +34,6 @@ class ContactForm(forms.ModelForm):
 		model = Contact
 		fields = '__all__'
 
-class DateForm(forms.Form):
-    date = forms.DateTimeField(input_formats=['%d/%m/%Y %H:%M'])
 
 class UploadFileForm(forms.Form):
 	title = forms.CharField(max_length=50)
@@ -51,12 +49,14 @@ class FileForm(forms.Form):
 	Fuel_used = forms.FloatField()
 	Vehicle_speed = forms.FloatField()
 
-class FiledataForm(forms.Form):
-	id = forms.IntegerField()
-	date_time= forms.CharField()
-	Average_fuel_consumption = forms.FloatField()
-	Average_speed = forms.FloatField()
-	Distance_travelled = forms.FloatField()
-	Engine_RPM = forms.FloatField()
-	Fuel_used = forms.FloatField()
-	Vehicle_speed = forms.FloatField()
+class DateInput(forms.DateInput):
+    input_type = 'date'
+
+class DatePickerForm(forms.ModelForm):
+
+    class Meta:
+        model = DatePicker
+        fields = [ 'date']
+        widgets = {
+            'date': DateInput(),
+        }
