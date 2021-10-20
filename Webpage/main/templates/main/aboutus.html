@@ -1,29 +1,77 @@
 {% extends "main/header.html" %}
 {% load static %}
 {% block content %}
-<body>
-	<div class="container">
-		<h1>About Us</h1>
-		<link rel="stylesheet" type="text/css"
-			href="{% static 'css/main.css' %}">
-		<div class="img-col">
-			<img src="static/images/hansel.jpg" alt="Hansel", width="120", height="125">
-		</div>
-		<div class="text-col">
-			<h5 class="title">Hansel</h5>
-			<p class="card-text">Group leader</p>
-		</div>
-		<img src="static/images/jane.jpg" alt="Jane", width="120", height="125">
-			<h5 class="title">Jane</h5>
-			<p class="card-text">Group member</p>
-		<img src="static/images/joyce.jpg" alt="Joyce", width="120", height="125">
-			<h5 class="title">Joyce</h5>
-			<p class="card-text">Group member</p>
-		<img src="static/images/allen.jpg" alt="Allen", width="120", height="125">
-			<h5 class="title">Allen</h5>
-			<p class="card-text">Group member</p>
-		
-	</div>
-</body>
+
+<div class="bg-light py-4">
+  <div class="container py-4">
+    <div class="row mb-3">
+      <div class="col-lg-4">
+        <h2 class="display-4 font-weight-light">Advisor</h2>
+    </div>
+  </div>
+
+
+	 <div class="row text-center">
+      <!-- Team item-->
+      <div class="col-xl-6 col-sm-5 mb-4">
+        <div class="bg-white rounded shadow-sm py-5 px-4"><img src="./static/images/david.jpg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+          <h5 class="mb-0">David C. Li</h5><span class="text-uppercase text-muted">Advisor</span>
+          <h5 class="mb-0"></h5><span class="text-muted">Email: davidli@mail.mcu.edu.tw</span>
+        </div>
+      </div>
+      <!-- End-->
+ <div class="bg-light py-2">
+  <div class="container py-2">
+    <div class="row mb-1">
+      <div class="col-lg-4">
+        <h2 class="display-4 font-weight-light">Our Team</h2>
+      </div>
+    </div>
+
+    <div class="row text-center">
+      <!-- Team item-->
+      <div class="col-xl-6 col-sm-5 mb-4">
+        <div class="bg-white rounded shadow-sm py-5 px-4"><img src="./static/images/hansel.jpg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+          <h5 class="mb-0">Dick Hansel Ryan</h5><span class="text-uppercase text-muted">Project Manager</span>
+		  <h5 class="mb-0"></h5><span class=" text-uppercase text-muted">Data Analyst</span>
+      <h5 class="mb-0"></h5><span class="text-muted">Email: 07470136@me.mcu.edu.tw</span>
+        </div>
+      </div>
+      <!-- End-->
+
+      <!-- Team item-->
+      <div class="col-xl-6 col-sm-5 mb-4">
+        <div class="bg-white rounded shadow-sm py-5 px-4"><img src="./static/images/joyce.jpg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+          <h5 class="mb-0">YI-JIE, TANG</h5><span class=" text-uppercase text-muted">Web Designer</span>
+		  <h5 class="mb-0"></h5><span class=" text-uppercase text-muted">Database Manager</span>
+      <h5 class="mb-0"></h5><span class="text-muted">Email: 07160113@me.mcu.edu.tw</span>
+        </div>
+      </div>
+      <!-- End-->
+
+      <!-- Team item-->
+      <div class="col-xl-6 col-sm-5 mb-4">
+        <div class="bg-white rounded shadow-sm py-5 px-4"><img src="./static/images/allen.jpg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+          <h5 class="mb-0">REN-HE, WANG</h5><span class=" text-uppercase text-muted">Web Designer</span>
+		  <h5 class="mb-0"></h5><span class=" text-uppercase text-muted">Data Collector</span>
+      <h5 class="mb-0"></h5><span class="text-muted">Email: 07360612@me.mcu.edu.tw</span>
+        </div>
+      </div>
+      <!-- End-->
+
+      <!-- Team item-->
+      <div class="col-xl-6 col-sm-5 mb-4">
+        <div class="bg-white rounded shadow-sm py-5 px-4"><img src="./static/images/jane.jpg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+          <h5 class="mb-0">CHEN, TUNG</h5><span class=" text-uppercase text-muted">UX / UI Designer</span>
+		  <h5 class="mb-0"></h5><span class=" text-uppercase text-muted">Data Analyst</span>
+      <h5 class="mb-0"></h5><span class="text-muted">Email: 07160122@me.mcu.edu.tw</span>
+        </div>
+      </div>
+      <!-- End-->
+
+    </div>
+  </div>
+</div>
+
 	
 {% endblock %}
