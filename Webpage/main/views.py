@@ -64,6 +64,7 @@ def login_request(request):
 		else:
 			messages.error(request,"Invalid username or password.")
 	form = AuthenticationForm()
+	
 	return render(request=request, template_name="main/login.html", context={"form":form})
 
 def logout_request(request):
@@ -131,23 +132,51 @@ def data(request):
 				collection.insert(DataDict)
 				
 			print("Data has been inserted")
+
 			# delete already read files
 			os.remove(os.path.join(files_path, fileName))
 		
-	col = db["main_file"]
-	if request.method == "POST":
-		startdate = request.POST.get('startdate')
-		enddate = request.POST.get('enddate')
-		result = col.find({'Date':{'$gte' : startdate, '$lte' : enddate}})
-		return render(request,'main/data.html',{"data":result})
-	else:
-		file = File.objects.all()
-	return render(request, 'main/data.html',{"data":file})
+		col = db["main_file"]
+		if request.method == "POST":
+			startdate = request.POST.get('startdate')
+			enddate = request.POST.get('enddate')
+			result = col.find({'date_time':{'$gte' : startdate, '$lte' : enddate}})
+			return render(request,'main/data.html',{"data":result})
+		else:
+			file = File.objects.all()
 
+		return render(request, 'main/data.html',{"data":file})
+
+# reference: https://www.fooish.com/html/hyperlink-a-tag.html
 def data_analysis(request):
-	form = DatePickerForm
+	form = DatePickerForm(request.POST)
+	if form.is_valid():
+		date = form.cleaned_data['date']
+		datepicker = DatePicker()
+		datepicker.date = date
+		datepicker.save()
 
-	return render(request, "main/data_analysis.html", {'form':form})
+		date = request.POST.get('date')
+		if date == '2021-09-30':			
+			return render(request, "main/data_analysis.html", {'form':form})
+
+	return render(request, "main/data_analysis2.html", {'form':form})
+
+
+def data_analysis2(request):
+	form = DatePickerForm(request.POST)
+	if form.is_valid():
+		date = form.cleaned_data['date']
+		datepicker = DatePicker()
+		datepicker.date = date
+		datepicker.save()
+
+		date = request.POST.get('date')
+		if date == '2021-09-30':			
+			return render(request, "main/data_analysis.html", {'form':form})
+
+	return render(request, "main/data_analysis2.html", {'form':form})
+
 
 def data_prediction(request):
 	
@@ -165,9 +194,10 @@ def ubi(request):
 	# Insurance calculation
 	if data >= 3000:
 		fee = 1170
-	elif data >=1000:
+	elif data >= 1000:
 		fee = 975
 	else:
 		fee = 780
 	
-	return render(request, "main/ubi.html", {"data":data, "fee":fee})	
+	return render(request, "main/ubi.html", {"data":data, "fee":fee})
+

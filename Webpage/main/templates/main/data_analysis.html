@@ -4,15 +4,47 @@
 	{% load crispy_forms_tags %}
 
 	<!--User page HTML-->
-<br><br>
 	<div class="container mx-auto">
 	    	<div class="col-sm-12 col-md-12 col-lg-3 pb-4">
 		  	</div>
-		    		<div class="col-6 my-auto">
-		    			<h2 class="font-weight-bold pt-4">Data Analysis</h2>
-				  <img src="data:image/png;base64, {{data}}" alt="" height="500", width="600">
-		        </div>
-		    </div> 
-		</div>
+		    		<h2 class="font-weight-bold pt-4">Data Analysis</h2>
+					<form method="POST" style= "width:400px">
+					{% csrf_token %}
+					{{ form|crispy }}
+
+					<button class="btn btn-primary" type="submit">Submit</button>
+					<div class="dropdown" style= "position:absolute;left:800px;top:272px;"/>
+ 					<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    					Choose Section
+  					</button>
+  					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    				<a class="dropdown-item" href="#Engine_RPM">Engine RPM</a>
+    				<a class="dropdown-item" href="#Fuel_Comsumption">Fuel Comsumption</a>
+   	 				<a class="dropdown-item" href="#Vehicle_Speed">Vehicle Speed</a>
+					<a class="dropdown-item" href="#Density Plot & Histogram">Density Plot & Histogram</a>
+  					</div>
+					</div>
+					</form>
+					<br>
+					<h3 class="font-weight-bold pt-4" id="Engine_RPM">Engine RPM</h2>
+					<img src="./static/images/Avg_EngineRPM.png" style= "width:700px; heigh:475px;position:absolute;left:150px;top:450px;"/>
+					<img src="./static/images/Max_RPM.png" style= "width:700px; heigh:475px;position:absolute;left:800px;top:450px;"/>
+					<img src="./static/images/Min_RPM.png" style= "width:700px; heigh:475px;position:absolute;left:150px;top:800px;"/>
+
+					<a><h3 class="font-weight-bold pt-4"  id="Fuel_Comsumption" style="position:absolute;left:380px;top:1150px">Fuel Comsumption</h2></a>
+					<img src="./static/images/Total_Fuel_Consumption.png" style= "width:700px; heigh:475px;position:absolute;left:150px;top:1220px;"/>
+					<img src="./static/images/Total_Fuel_Consumption (bar plot).png" style= "width:700px; heigh:475px;position:absolute;left:800px;top:1230px;"/>
+					<img src="./static/images/Avg_Fuel_Consumption.png" style= "width:700px; heigh:475px;position:absolute;left:150px;top:1570px;"/>
+
+					<h3 class="font-weight-bold pt-4" id="Vehicle_Speed" style="position:absolute;left:380px;top:1900px">Vehicle Speed</h2>
+					<img src="./static/images/Avg_Veh_Speed.png" style= "width:700px; heigh:475px;position:absolute;left:150px;top:1970px;"/>
+					<img src="./static/images/Max_Veh_Speed.png" style= "width:700px; heigh:475px;position:absolute;left:800px;top:1970px;"/>
+					<img src="./static/images/Min_Veh_Speed.png" style= "width:700px; heigh:475px;position:absolute;left:150px;top:2330px;"/>
+
+					<h3 class="font-weight-bold pt-4" id="Density Plot & Histogram" style="position:absolute;left:380px;top:2650px">Density Plot & Histogram</h2>
+					<img src="./static/images/User2_DensityPlot.png" style= "width:700px; heigh:475px;position:absolute;left:150px;top:2710px;"/>
+					<img src="./static/images/User2_Histogram.png" style= "width:700px; heigh:475px;position:absolute;left:800px;top:2700px;"/>
+
+					
 	</div>
 {% endblock %}

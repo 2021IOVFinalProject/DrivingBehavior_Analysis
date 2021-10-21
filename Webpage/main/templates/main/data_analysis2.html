@@ -1,0 +1,31 @@
+{% extends "main/header.html" %}
+
+	{% block content %}
+	{% load crispy_forms_tags %}
+
+	<!--User page HTML-->
+	<div class="container mx-auto">
+	    	<div class="col-sm-12 col-md-12 col-lg-3 pb-4">
+		  	</div>
+		    		<h2 class="font-weight-bold pt-4">Data Analysis</h2>
+					<form method="POST" style= "width:400px">
+					{% csrf_token %}
+					{{ form|crispy }}
+
+					<button class="btn btn-primary" type="submit">Submit</button>
+					<div class="dropdown" style= "position:absolute;left:800px;top:272px;"/>
+ 					<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    					Choose Section
+  					</button>
+  					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    				<a class="dropdown-item" href="#Engine_RPM">Engine RPM</a>
+    				<a class="dropdown-item" href="#Fuel_Comsumption">Fuel Comsumption</a>
+   	 				<a class="dropdown-item" href="#Vehicle_Speed">Vehicle Speed</a>
+					<a class="dropdown-item" href="#Density Plot & Histogram">Density Plot & Histogram</a>
+  					</div>
+					</div>
+					</form>
+					<br>
+
+	</div>
+{% endblock %}
