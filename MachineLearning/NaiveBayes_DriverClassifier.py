@@ -8,7 +8,6 @@ import seaborn as sb
 from sklearn import metrics
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import GaussianNB
-from sklearn.preprocessing import StandardScaler
 
 #Open dataset
 df = pd.read_csv('./MachineLearning/User2_Dataset.csv', index_col = [0])
