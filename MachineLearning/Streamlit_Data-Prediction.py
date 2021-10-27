@@ -2,7 +2,7 @@
 #To display Machine Learning data prediction result
 
 #Import modules
-#import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import plotly.express as px
