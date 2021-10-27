@@ -48,7 +48,7 @@ Machine Learning Model (Linear Regression and Naive Bayes Classifier).
 """)
 
 #Open dataset
-df = pd.read_csv('./MachineLearning/User2_Dataset.csv',index_col = [0])
+df = pd.read_csv('./User2_Dataset.csv',index_col = [0])
 #print(df.head())
 df.drop('Date', axis = 1, inplace = True)
 
