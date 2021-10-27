@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
-    'import_export',
+    'rest_framework',
+    'import_export'
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4' # forms 
@@ -161,8 +162,3 @@ try:
 except Exception as e:
     # in case of any error, pass silently.
     pass
-
-import threading
-msg_handle = threading.Thread(target='data')
-msg_handle.daemon = True
-msg_handle.start()

@@ -2,6 +2,7 @@
 
 	{% block content %}
 	{% load crispy_forms_tags %}
+	
 
 	<!--User page HTML-->
 	<div class="container mx-auto">
@@ -26,25 +27,28 @@
 					</div>
 					</form>
 					<br>
-					<h3 class="font-weight-bold pt-4" id="Engine_RPM">Engine RPM</h2>
-					<img src="./static/images/Avg_EngineRPM.png" style= "width:700px; heigh:475px;position:absolute;left:150px;top:450px;"/>
-					<img src="./static/images/Max_RPM.png" style= "width:700px; heigh:475px;position:absolute;left:800px;top:450px;"/>
-					<img src="./static/images/Min_RPM.png" style= "width:700px; heigh:475px;position:absolute;left:150px;top:800px;"/>
-
-					<a><h3 class="font-weight-bold pt-4"  id="Fuel_Comsumption" style="position:absolute;left:380px;top:1150px">Fuel Comsumption</h2></a>
-					<img src="./static/images/Total_Fuel_Consumption.png" style= "width:700px; heigh:475px;position:absolute;left:150px;top:1220px;"/>
-					<img src="./static/images/Total_Fuel_Consumption (bar plot).png" style= "width:700px; heigh:475px;position:absolute;left:800px;top:1230px;"/>
-					<img src="./static/images/Avg_Fuel_Consumption.png" style= "width:700px; heigh:475px;position:absolute;left:150px;top:1570px;"/>
-
-					<h3 class="font-weight-bold pt-4" id="Vehicle_Speed" style="position:absolute;left:380px;top:1900px">Vehicle Speed</h2>
-					<img src="./static/images/Avg_Veh_Speed.png" style= "width:700px; heigh:475px;position:absolute;left:150px;top:1970px;"/>
-					<img src="./static/images/Max_Veh_Speed.png" style= "width:700px; heigh:475px;position:absolute;left:800px;top:1970px;"/>
-					<img src="./static/images/Min_Veh_Speed.png" style= "width:700px; heigh:475px;position:absolute;left:150px;top:2330px;"/>
-
-					<h3 class="font-weight-bold pt-4" id="Density Plot & Histogram" style="position:absolute;left:380px;top:2650px">Density Plot & Histogram</h2>
-					<img src="./static/images/User2_DensityPlot.png" style= "width:700px; heigh:475px;position:absolute;left:150px;top:2710px;"/>
-					<img src="./static/images/User2_Histogram.png" style= "width:700px; heigh:475px;position:absolute;left:800px;top:2700px;"/>
-
-					
+					<script src="https://cdn.bootcss.com/jquery/3.0.0/jquery.min.js"></script>
+    				<script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/echarts/4.8.0/echarts.js"></script>
+					<body>
+					<div id="line" style="width:1000px; height:600px;position:absolute;left:150px;top:450px;"></div>
+					<script>
+    				var chart = echarts.init(document.getElementById('line'), 'white', {renderer: 'canvas'});
+    					$(
+        				function () {
+           			 		fetchData(chart);
+        					}
+    					);
+    					function fetchData() {
+        					$.ajax({
+            					type: "GET",
+            					url: "http://127.0.0.1:8000/data_analysis",
+            					dataType: 'json',
+            					success: function (result) {
+                				chart.setOption(result.data);
+            					}
+        					});
+    					}
+					</script>
+					</body>
 	</div>
 {% endblock %}

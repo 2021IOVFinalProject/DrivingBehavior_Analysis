@@ -13,6 +13,10 @@ from os import listdir
 import json
 import pymongo
 from pandas import DataFrame
+from django.http import HttpResponse
+from rest_framework.views import APIView
+from pyecharts.charts import Line
+from pyecharts import options as opts
 
 db_handle, mongo_client = get_db_handle('CarCare_DB', 'localhost', 27017, 'USERNAME', 'PASSWORD')
 collection_handle = get_collection_handle(db_handle, 'REGIONS_COLLECTION')
@@ -72,9 +76,6 @@ def logout_request(request):
 	messages.info(request, "You have successfully logged out.") 
 	return redirect("main:homepage")
 
-def userpage(request):
-
-	return render(request=request, template_name="main/user.html")
 
 def upload_file(request):
 	context = {}
@@ -157,7 +158,8 @@ def data_analysis(request):
 		datepicker.save()
 
 		date = request.POST.get('date')
-		if date == '2021-09-30':			
+		if date == '2021-09-30':
+
 			return render(request, "main/data_analysis.html", {'form':form})
 
 	return render(request, "main/data_analysis2.html", {'form':form})
@@ -172,11 +174,11 @@ def data_analysis2(request):
 		datepicker.save()
 
 		date = request.POST.get('date')
-		if date == '2021-09-30':			
+		if date == '2021-09-30':
+		
 			return render(request, "main/data_analysis.html", {'form':form})
 
 	return render(request, "main/data_analysis2.html", {'form':form})
-
 
 def data_prediction(request):
 	
@@ -193,7 +195,7 @@ def ubi(request):
 	# print("Total Distance travelled:", sum(df['Distance_travelled']))
 	# Insurance calculation
 	if data >= 3000:
-		fee = 1170
+		fee = '1,170'
 	elif data >= 1000:
 		fee = 975
 	else:
@@ -201,3 +203,64 @@ def ubi(request):
 	
 	return render(request, "main/ubi.html", {"data":data, "fee":fee})
 
+# pyecharts integration
+def response_as_json(data):
+    json_str = json.dumps(data)
+    response = HttpResponse(
+        json_str,
+        content_type="application/json",
+    )
+    response["Access-Control-Allow-Origin"] = "*"
+    return response
+
+
+def json_response(data, code=200):
+    data = {
+        "code": code,
+        "msg": "success",
+        "data": data,
+    }
+    return response_as_json(data)
+
+
+def json_error(error_string="error", code=500, **kwargs):
+    data = {
+        "code": code,
+        "msg": error_string,
+        "data": {}
+    }
+    data.update(kwargs)
+    return response_as_json(data)
+
+
+JsonResponse = json_response
+JsonError = json_error
+
+
+def linechart() -> Line:
+	df = pd.read_csv('./main/data/User2_Dataset.csv',  index_col = [1], parse_dates = ['Date'])
+	average_speed = df['Average_speed']
+	distance_travelled = df['Distance_travelled']
+	fuel_used = df['Fuel_used']
+	vehicle_speed = df['Vehicle_speed']
+
+	x_date = ['2020-11', '2020-12', '2021-01', '2021-02', '2021-03', '2021-04', 
+			'2021-05', '2021-06','2021-07', '2021-08', '2021-09' ]
+	c = (
+		Line()
+		.add_xaxis(x_date)
+		.add_yaxis("Engine RPM", average_speed)
+		.add_yaxis("Distance_travelled", distance_travelled)
+		.add_yaxis("Fuel Used", fuel_used)
+		.add_yaxis("Vehicle Speed", vehicle_speed)
+
+	)
+	return c
+
+class ChartView(APIView):
+    def get(self, request, *args, **kwargs):
+        return JsonResponse(json.loads(linechart()))
+
+class IndexView(APIView):
+    def get(self, request, *args, **kwargs):
+        return HttpResponse(content=open("main/data_analysis").read())
