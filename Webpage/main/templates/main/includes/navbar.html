@@ -3,7 +3,7 @@
 <head>
 <title>Car Care</title>
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
-<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+<link rel="stylesheet" href="{% static 'css/analysis.css' %}">
 </head>
 
 <body>
@@ -17,25 +17,22 @@
     <div class="sub-menu-1">
     <ul>
       <li><a href="data_prediction"><i class="fas fa-chart-bar"></i>Data Prediction</a></li>
+      <li><a href="https://share.streamlit.io/2021iovfinalproject/drivingbehavior_analysis/main/Streamlit_Data-Prediction.py" 
+      target="_blank"><i class="fas fa-chart-bar"></i>Streamlit</a></li>
     </ul>
   </div>
   <li><a href="ubi_insurance"><i class="fas fa-chart-bar"></i>UBI Insurance</a></li>
   {% endif %}
   <li><a href="aboutus"><i class="fas fa-address-card"></i>About us</a>
-  <div class="sub-menu-1">
-    <ul>
-      <li><a href="#"><i class="fas fa-plus-square"></i>Final Project</a></li>
-      <li><a href="aboutus"><i class="fas fa-users"></i>Team Member</a></li>
-    </ul>
-  </div>
   </li>
 
   {% if user.is_authenticated %}
     <li>
-      <a href="/user"><i class="fas fa-user"></i>{{user.username|title}}</a>
+      <a href=""><i class="fas fa-user"></i>{{user.username|title}}</a>
       <div class="sub-menu-1">
       <ul>
         <li><a href=" data "><i class="fas fa-database"></i>Data</a></li>
+        <li><a href=" upload "><i class="fas fa-database"></i>Data upload</a></li>
       </ul>
     </div>
     </li>
