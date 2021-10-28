@@ -50,7 +50,6 @@ Machine Learning Model (Linear Regression and Naive Bayes Classifier).
 #Open dataset
 df = pd.read_csv('./MachineLearning/User2_Dataset.csv',index_col = [0])
 #print(df.head())
-df.drop('Date', axis = 1, inplace = True)
 
 select_menu = st.header("Please Click the Menu on the left for More Functions")
 
@@ -63,7 +62,7 @@ if menu_select == 'Exploratory Data Analysis':
     if st.sidebar.checkbox("Show Dataset"):
         st.subheader('Driving Behavior Dataset')
         st.write(df)
-
+    df.drop('Date', axis = 1, inplace = True)
 #Show heatmap of feature correlation
     dfcorr = df.corr()
     if st.sidebar.checkbox("Show Features Correlation Heatmap"):
