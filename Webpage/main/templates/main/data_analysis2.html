@@ -12,17 +12,8 @@
 					{% csrf_token %}
 					{{ form|crispy }}
 
-					<button class="btn btn-primary" type="submit">Submit</button>
-					<div class="dropdown" style= "position:absolute;left:800px;top:272px;"/>
- 					<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    					Choose Section
-  					</button>
-  					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    				<a class="dropdown-item" href="#Engine_RPM">Engine RPM</a>
-    				<a class="dropdown-item" href="#Fuel_Comsumption">Fuel Comsumption</a>
-   	 				<a class="dropdown-item" href="#Vehicle_Speed">Vehicle Speed</a>
-					<a class="dropdown-item" href="#Density Plot & Histogram">Density Plot & Histogram</a>
-  					</div>
+					<button class="btn btn-primary" type="submit" style="position:absolute;left:850px;top:270px">Submit</button>
+					
 					</div>
 					</form>
 					<br>
