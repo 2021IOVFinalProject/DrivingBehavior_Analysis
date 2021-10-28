@@ -2,7 +2,7 @@ from django.urls import path
 from . import views
 from django.conf.urls.static import static
 from django.conf import settings
-from django.views.generic import TemplateView 
+from django.conf.urls import url
 
 app_name = "main"   
 
@@ -19,4 +19,5 @@ urlpatterns = [
     path("data_prediction", views.data_prediction, name= "data_prediction"),
     path("contact_us", views.contact_us,name="contact_us" ),
     path("ubi_insurance", views.ubi,name="ubi_insurance" ),
+
 ]+ static(settings.MEDIA_URL,document_roots=settings.MEDIA_ROOT )
