@@ -125,14 +125,14 @@ if menu_select == 'Machine Learning':
         df1 = predicted_data['Actual'].head(30)
         st.subheader("Actual Value")
         act_fig = px.bar(df1, y = 'Actual',  labels= \
-                {'Actual': df[col2],\
+                {'Actual': df[col2].name,\
                 'index': 'Driving Trip'}).update_traces(marker = dict(color = 'green'))
         st.plotly_chart(act_fig)
 
         df2 = predicted_data['Predicted'].head(30)
         st.subheader("Predicted Value")
         act_fig = px.bar(df2, y = 'Predicted', labels= \
-                {'Predicted': df[col2],\
+                {'Predicted': df[col2].name,\
                 'index': 'Driving Trip'}).update_traces(marker = dict(color = 'red'))
         st.plotly_chart(act_fig)
         #df1.plot(kind='bar', figsize=(10, 8), color = ['darkblue', 'limegreen'])
