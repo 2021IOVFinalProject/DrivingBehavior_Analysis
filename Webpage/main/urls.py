@@ -16,7 +16,7 @@ urlpatterns = [
     path("data", views.data, name= "data"),
     path("data_analysis", views.data_analysis, name= "data_analysis"),
     path("data_analysis", views.data_analysis2, name= "data_analysis"),
-    path("data_prediction", views.data_prediction, name= "data_prediction"),
+    #path("data_prediction", views.data_prediction, name= "data_prediction"),
     path("contact_us", views.contact_us,name="contact_us" ),
     path("ubi_insurance", views.ubi,name="ubi_insurance" ),
 

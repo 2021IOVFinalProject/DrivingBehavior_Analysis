@@ -180,9 +180,9 @@ def data_analysis2(request):
 
 	return render(request, "main/data_analysis2.html", {'form':form})
 
-def data_prediction(request):
+# def data_prediction(request):
 	
-	return render(request=request, template_name="main/data_prediction.html")	
+# 	return render(request=request, template_name="main/data_prediction.html")	
 
 def ubi(request):
 	col = db.main_file
