@@ -49,8 +49,8 @@ conf_df = pd.DataFrame(conf_mat, index = [1, 2, 3], columns = [1, 2, 3])
 print("\nConfusion Matrix of the Model:\n", conf_mat)
 plt.title("Confusion Matrix's Heatmap")
 sb.heatmap(conf_df, annot = True, fmt ='d', cmap = 'YlGnBu')
-plt.xlabel("Predicted Classification Values")
-plt.ylabel("Actual Classification Values")
+plt.xlabel("Actual Classification Values")
+plt.ylabel("Predicted Classification Values")
 plt.show()
 
 #Classification Report

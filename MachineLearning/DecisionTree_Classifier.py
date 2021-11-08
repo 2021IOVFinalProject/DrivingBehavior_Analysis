@@ -31,7 +31,7 @@ x = df.drop(['Date', 'Driver_Risk'], axis = 1)
 y = df['Driver_Risk']
 
 #Split dataset to train and test
-x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.2, random_state = 20)
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.33, random_state = 100)
 print('Shape of x_train: ', x_train.shape, '\nShape of x_test: ', x_test.shape)
 print('Shape of y_train: ', y_train.shape, '\nShape of y_test: ', y_test.shape)
 
@@ -51,18 +51,21 @@ y_pred = classifier.predict(x_test)
 cr = metrics.classification_report(y_test, y_pred)
 print("\nClassification Report of the Model:\n", cr)
 
+#Accuracy score
+score = metrics.accuracy_score(y_test, y_pred)
+print('Accuracy of Decision Tree Classifier: %.2f' % score)
+
 #Confusion Matrix
 conf_mat = metrics.confusion_matrix(y_test, y_pred)
 conf_df = pd.DataFrame(conf_mat, index = [1, 2, 3], columns = [1, 2, 3])
 print("\nConfusion Matrix of the Model:\n", conf_mat)
 plt.title("Confusion Matrix's Heatmap")
 sb.heatmap(conf_df, annot = True, fmt ='d', cmap = 'YlGnBu')
-plt.xlabel("Predicted Classification Values")
-plt.ylabel("Actual Classification Values")
+plt.xlabel("Actual Classification Values")
+plt.ylabel("Predicted Classification Values")
 plt.show()
 
 #Visualizing Decision Tree
 tree_visualization = plot_tree(decision_tree = classifier, feature_names = df.columns,
         class_names = ["Safe", "Moderate", "Dangerous"], filled = True, precision = 4, rounded = True)
-plt.title('Decision Tree Visualization')
 plt.show()
