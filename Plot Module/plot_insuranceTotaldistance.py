@@ -2,10 +2,10 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-df = pd.read_csv('./MachineLearning/User2_Dataset.csv', index_col = [1], parse_dates = ['Date'])
+df = pd.read_csv('./MachineLearning/DrivingBehavior_Final_Dataset.csv', index_col = [1], parse_dates = ['Date'])
 print(df.columns)
 
-dist_resample = df.resample('M').sum()['Distance travelled (km)']
+dist_resample = df.resample('M').sum()['Driving_Distance_(km)']
 print(dist_resample)
 
 ax = dist_resample.plot.bar(color = 'darkblue')

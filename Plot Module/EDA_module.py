@@ -6,9 +6,8 @@ import pandas as pd
 import seaborn as sb
 
 #Open dataset
-df = pd.read_csv('./MachineLearning/User2_Dataset.csv', index_col = [1])
-df.drop(df.columns[df.columns.str.contains('Unnamed')], axis = 1, inplace = True)
-df.drop('Driver Type', axis = 1, inplace = True)
+df = pd.read_csv('./MachineLearning/DrivingBehavior_Final_Dataset.csv', index_col = [0])
+df.drop(['Date', 'Driver_Risk'], axis = 1, inplace = True)
 #print(df.columns)
 
 #Print top rows of dataset
@@ -39,17 +38,4 @@ dfcorr = df.corr()
 sb.heatmap(dfcorr, cmap = 'YlGnBu', annot = True)
 plt.title("Correlation Heatmap")
 plt.tight_layout()
-plt.show()
-
-#Show relation between some features using regression plot
-sb.regplot(x = 'Fuel used (L)', y = 'Distance travelled (km)', data = df, color = 'navy')
-plt.title('Data Distribution and Relation Between Fuel Used and Distance Travelled')
-plt.show()
-
-sb.regplot(x = 'Vehicle speed (km/h)', y = 'Engine RPM (rpm)', data = df)
-plt.title('Data Distribution and Relation Between Vehicle Speed and Engine RPM')
-plt.show()
-
-sb.regplot(x = 'Average speed (km/h)', y = 'Distance travelled (km)', data = df, color = 'darkblue')
-plt.title('Data Distribution and Relation Between Average Speed and Distance Travelled')
 plt.show()
