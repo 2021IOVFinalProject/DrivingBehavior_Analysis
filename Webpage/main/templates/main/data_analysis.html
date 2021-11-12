@@ -14,7 +14,10 @@
 					{{ form|crispy }}
 
 					<button class="btn btn-primary" type="submit" style="position:absolute;left:850px;top:270px">Submit</button>
-				
+					
+					</div>
+					</form>
+					<br>
 <!DOCTYPE html>
 <html>
 <head>
@@ -57,16 +60,17 @@
         }
     </style>
     <div class="tab">
-            <button class="tablinks" onclick="showChart(event, '51626cfbb7d747c5a41be79cae6dbf90')">Linechart</button>
-            <button class="tablinks" onclick="showChart(event, '8fa9f20f8ad44728b3997b65dce3c448')">Barchart</button>
+            <button class="tablinks" onclick="showChart(event, '7cc67d0bae874c11b20ba9a9d6a2ab59')">Linechart</button>
+            <button class="tablinks" onclick="showChart(event, '77c0b5da3ba94f54af34637cdceb931b')">Barchart</button>
+            <button class="tablinks" onclick="showChart(event, 'ef9c784ac5c840f28a80e20cdb2ab02a')">Barchart2</button>
     </div>
 
     <div class="box">
-                <div id="51626cfbb7d747c5a41be79cae6dbf90" class="chart-container" style="width:1000px; height:600px;position:absolute;left:250px;top:450px;"></div>
+                <div id="7cc67d0bae874c11b20ba9a9d6a2ab59" class="chart-container" style="width:900px; height:500px;position:absolute;left:250px;top:450px;"></div>
     <script>
-        var chart_51626cfbb7d747c5a41be79cae6dbf90 = echarts.init(
-            document.getElementById('51626cfbb7d747c5a41be79cae6dbf90'), 'white', {renderer: 'canvas'});
-        var option_51626cfbb7d747c5a41be79cae6dbf90 = {
+        var chart_7cc67d0bae874c11b20ba9a9d6a2ab59 = echarts.init(
+            document.getElementById('7cc67d0bae874c11b20ba9a9d6a2ab59'), 'white', {renderer: 'canvas'});
+        var option_7cc67d0bae874c11b20ba9a9d6a2ab59 = {
     "animation": true,
     "animationThreshold": 2000,
     "animationDuration": 1000,
@@ -412,7 +416,12 @@
                 "Distance_travelled": true,
                 "Fuel Used": true,
                 "Vehicle Speed": true
-            }
+            },
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
         }
     ],
     "tooltip": {
@@ -490,15 +499,22 @@
                 }
             }
         }
+    ],
+    "title": [
+        {
+            "text": "Line charts analysis",
+            "padding": 5,
+            "itemGap": 10
+        }
     ]
 };
-        chart_51626cfbb7d747c5a41be79cae6dbf90.setOption(option_51626cfbb7d747c5a41be79cae6dbf90);
+        chart_7cc67d0bae874c11b20ba9a9d6a2ab59.setOption(option_7cc67d0bae874c11b20ba9a9d6a2ab59);
     </script>
-                <div id="8fa9f20f8ad44728b3997b65dce3c448" class="chart-container" style="width:900px; height:500px;"></div>
+                <div id="77c0b5da3ba94f54af34637cdceb931b" class="chart-container" style="width:900px; height:500px;position:absolute;left:250px;top:450px;"></div>
     <script>
-        var chart_8fa9f20f8ad44728b3997b65dce3c448 = echarts.init(
-            document.getElementById('8fa9f20f8ad44728b3997b65dce3c448'), 'white', {renderer: 'canvas'});
-        var option_8fa9f20f8ad44728b3997b65dce3c448 = {
+        var chart_77c0b5da3ba94f54af34637cdceb931b = echarts.init(
+            document.getElementById('77c0b5da3ba94f54af34637cdceb931b'), 'white', {renderer: 'canvas'});
+        var option_77c0b5da3ba94f54af34637cdceb931b = {
     "animation": true,
     "animationThreshold": 2000,
     "animationDuration": 1000,
@@ -1034,7 +1050,549 @@
         }
     ]
 };
-        chart_8fa9f20f8ad44728b3997b65dce3c448.setOption(option_8fa9f20f8ad44728b3997b65dce3c448);
+        chart_77c0b5da3ba94f54af34637cdceb931b.setOption(option_77c0b5da3ba94f54af34637cdceb931b);
+    </script>
+                <div id="ef9c784ac5c840f28a80e20cdb2ab02a" class="chart-container" style="width:900px; height:500px;position:absolute;left:250px;top:450px;"></div>
+    <script>
+        var chart_ef9c784ac5c840f28a80e20cdb2ab02a = echarts.init(
+            document.getElementById('ef9c784ac5c840f28a80e20cdb2ab02a'), 'white', {renderer: 'canvas'});
+        var option_ef9c784ac5c840f28a80e20cdb2ab02a = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "color": [
+        "#c23531",
+        "#2f4554",
+        "#61a0a8",
+        "#d48265",
+        "#749f83",
+        "#ca8622",
+        "#bda29a",
+        "#6e7074",
+        "#546570",
+        "#c4ccd3",
+        "#f05b72",
+        "#ef5b9c",
+        "#f47920",
+        "#905a3d",
+        "#fab27b",
+        "#2a5caa",
+        "#444693",
+        "#726930",
+        "#b2d235",
+        "#6d8346",
+        "#ac6767",
+        "#1d953f",
+        "#6950a1",
+        "#918597"
+    ],
+    "series": [
+        {
+            "type": "bar",
+            "name": "Distance travelled",
+            "legendHoverLink": true,
+            "data": [
+                2,
+                2,
+                3,
+                3,
+                4,
+                4,
+                4,
+                5,
+                6,
+                6,
+                7,
+                9,
+                10,
+                11,
+                12,
+                12,
+                13,
+                14,
+                14,
+                15,
+                15,
+                2,
+                2,
+                3,
+                3,
+                4,
+                4,
+                5,
+                5,
+                6,
+                7,
+                8,
+                9,
+                11,
+                11,
+                12,
+                13,
+                14,
+                14,
+                14,
+                15,
+                16,
+                16,
+                16,
+                17,
+                17,
+                17,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                8,
+                8,
+                10,
+                10,
+                11,
+                11,
+                12,
+                13,
+                14,
+                14,
+                14,
+                2,
+                2,
+                3,
+                4,
+                4,
+                5,
+                6,
+                7,
+                7,
+                8,
+                8,
+                10,
+                11,
+                11,
+                12,
+                13,
+                13,
+                13,
+                13,
+                14,
+                15,
+                15,
+                15,
+                2,
+                2,
+                2,
+                3,
+                5,
+                5,
+                6,
+                8,
+                9,
+                9,
+                9,
+                10,
+                11,
+                12,
+                12,
+                13,
+                13,
+                13,
+                13,
+                14,
+                15,
+                15,
+                15,
+                2,
+                2,
+                2,
+                2,
+                3,
+                3,
+                4,
+                5,
+                6,
+                7,
+                7,
+                7,
+                8,
+                2,
+                3,
+                4,
+                4,
+                5,
+                6,
+                6,
+                7,
+                7,
+                7,
+                7,
+                8,
+                2,
+                2,
+                3,
+                3,
+                4,
+                5,
+                6,
+                7,
+                7,
+                7,
+                7,
+                8,
+                8,
+                2,
+                4,
+                5,
+                5,
+                6,
+                6,
+                6,
+                6,
+                7,
+                7,
+                8,
+                8,
+                8,
+                2,
+                2,
+                4,
+                4,
+                5,
+                6,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                13,
+                14,
+                15,
+                15,
+                2,
+                2,
+                3,
+                4,
+                4,
+                5,
+                7,
+                8,
+                9,
+                9,
+                9,
+                10,
+                10,
+                11,
+                12,
+                12,
+                13,
+                13,
+                13,
+                13,
+                13,
+                14,
+                15,
+                15,
+                2,
+                2,
+                2,
+                2,
+                3,
+                3,
+                4,
+                4,
+                5,
+                6,
+                6,
+                7,
+                8,
+                9,
+                11,
+                11,
+                12,
+                13,
+                13,
+                13,
+                14,
+                15,
+                2,
+                3,
+                4,
+                5,
+                7,
+                8,
+                8,
+                9,
+                10,
+                10,
+                11,
+                11,
+                12,
+                12,
+                12,
+                12,
+                13,
+                14,
+                14,
+                14,
+                14,
+                2,
+                2,
+                3,
+                4,
+                4,
+                4,
+                5,
+                5,
+                6,
+                7,
+                8,
+                9,
+                11,
+                11,
+                11,
+                12,
+                13,
+                13,
+                14,
+                14,
+                15,
+                15,
+                2,
+                2,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                8,
+                9,
+                9,
+                9,
+                10,
+                10,
+                11,
+                12,
+                12,
+                12,
+                13,
+                13,
+                13,
+                13,
+                13,
+                14,
+                15,
+                15,
+                2,
+                3,
+                3,
+                4,
+                5,
+                6,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                11,
+                12,
+                13,
+                13,
+                13,
+                14,
+                15,
+                15,
+                8,
+                2,
+                2,
+                3,
+                4,
+                5,
+                6,
+                6,
+                6,
+                7,
+                7,
+                8,
+                8,
+                8,
+                9,
+                9,
+                10,
+                10,
+                10,
+                11,
+                11,
+                11,
+                12,
+                12,
+                12,
+                13,
+                13,
+                14,
+                14,
+                14,
+                15,
+                3,
+                2,
+                3,
+                3,
+                4,
+                5,
+                6,
+                7,
+                7,
+                8,
+                8,
+                2,
+                4,
+                5,
+                5,
+                5,
+                6,
+                6,
+                7
+            ],
+            "showBackground": false,
+            "barMinHeight": 0,
+            "barCategoryGap": "20%",
+            "barGap": "30%",
+            "large": false,
+            "largeThreshold": 400,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "clip": true,
+            "zlevel": 0,
+            "z": 2,
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "Distance travelled"
+            ],
+            "selected": {
+                "Distance travelled": true
+            },
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5
+    },
+    "xAxis": [
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            },
+            "data": [
+                "2020-11",
+                "2020-12",
+                "2021-01",
+                "2021-02",
+                "2021-03",
+                "2021-04",
+                "2021-05",
+                "2021-06",
+                "2021-07",
+                "2021-08",
+                "2021-09"
+            ]
+        }
+    ],
+    "yAxis": [
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            }
+        }
+    ],
+    "title": [
+        {
+            "text": "Distance travelled",
+            "padding": 5,
+            "itemGap": 10
+        }
+    ],
+    "dataZoom": [
+        {
+            "show": true,
+            "type": "slider",
+            "realtime": true,
+            "start": 20,
+            "end": 80,
+            "orient": "horizontal",
+            "zoomLock": false,
+            "filterMode": "filter"
+        }
+    ]
+};
+        chart_ef9c784ac5c840f28a80e20cdb2ab02a.setOption(option_ef9c784ac5c840f28a80e20cdb2ab02a);
     </script>
     </div>
 
@@ -1066,5 +1624,6 @@
 </body>
 </html>
 
-	</div>
+
+
 {% endblock %}
