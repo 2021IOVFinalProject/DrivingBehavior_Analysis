@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Awesome-pyecharts</title>
+            <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
+
+    
+</head>
+<body>
+        <style>
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 12px 16px;
+            transition: 0.3s;
+        }
+
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        .chart-container {
+            display: none;
+            padding: 6px 12px;
+            border-top: none;
+        }
+    </style>
+    <div class="tab">
+            <button class="tablinks" onclick="showChart(event, '51626cfbb7d747c5a41be79cae6dbf90')">Linechart</button>
+            <button class="tablinks" onclick="showChart(event, '8fa9f20f8ad44728b3997b65dce3c448')">Barchart</button>
+    </div>
+
+    <div class="box">
+                <div id="51626cfbb7d747c5a41be79cae6dbf90" class="chart-container" style="width:900px; height:500px;"></div>
+    <script>
+        var chart_51626cfbb7d747c5a41be79cae6dbf90 = echarts.init(
+            document.getElementById('51626cfbb7d747c5a41be79cae6dbf90'), 'white', {renderer: 'canvas'});
+        var option_51626cfbb7d747c5a41be79cae6dbf90 = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "color": [
+        "#c23531",
+        "#2f4554",
+        "#61a0a8",
+        "#d48265",
+        "#749f83",
+        "#ca8622",
+        "#bda29a",
+        "#6e7074",
+        "#546570",
+        "#c4ccd3",
+        "#f05b72",
+        "#ef5b9c",
+        "#f47920",
+        "#905a3d",
+        "#fab27b",
+        "#2a5caa",
+        "#444693",
+        "#726930",
+        "#b2d235",
+        "#6d8346",
+        "#ac6767",
+        "#1d953f",
+        "#6950a1",
+        "#918597"
+    ],
+    "series": [
+        {
+            "type": "line",
+            "name": "Average speed",
+            "connectNulls": false,
+            "symbolSize": 4,
+            "showSymbol": true,
+            "smooth": false,
+            "clip": true,
+            "step": false,
+            "data": [
+                [
+                    "2020-11",
+                    23
+                ],
+                [
+                    "2020-12",
+                    20
+                ],
+                [
+                    "2021-01",
+                    23
+                ],
+                [
+                    "2021-02",
+                    24
+                ],
+                [
+                    "2021-03",
+                    25
+                ],
+                [
+                    "2021-04",
+                    27
+                ],
+                [
+                    "2021-05",
+                    25
+                ],
+                [
+                    "2021-06",
+                    25
+                ],
+                [
+                    "2021-07",
+                    26
+                ],
+                [
+                    "2021-08",
+                    27
+                ],
+                [
+                    "2021-09",
+                    30
+                ]
+            ],
+            "hoverAnimation": true,
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8
+            },
+            "lineStyle": {
+                "show": true,
+                "width": 1,
+                "opacity": 1,
+                "curveness": 0,
+                "type": "solid"
+            },
+            "areaStyle": {
+                "opacity": 0
+            },
+            "zlevel": 0,
+            "z": 0
+        },
+        {
+            "type": "line",
+            "name": "Distance_travelled",
+            "connectNulls": false,
+            "symbolSize": 4,
+            "showSymbol": true,
+            "smooth": false,
+            "clip": true,
+            "step": false,
+            "data": [
+                [
+                    "2020-11",
+                    2
+                ],
+                [
+                    "2020-12",
+                    2
+                ],
+                [
+                    "2021-01",
+                    3
+                ],
+                [
+                    "2021-02",
+                    3
+                ],
+                [
+                    "2021-03",
+                    4
+                ],
+                [
+                    "2021-04",
+                    4
+                ],
+                [
+                    "2021-05",
+                    4
+                ],
+                [
+                    "2021-06",
+                    5
+                ],
+                [
+                    "2021-07",
+                    6
+                ],
+                [
+                    "2021-08",
+                    6
+                ],
+                [
+                    "2021-09",
+                    7
+                ]
+            ],
+            "hoverAnimation": true,
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8
+            },
+            "lineStyle": {
+                "show": true,
+                "width": 1,
+                "opacity": 1,
+                "curveness": 0,
+                "type": "solid"
+            },
+            "areaStyle": {
+                "opacity": 0
+            },
+            "zlevel": 0,
+            "z": 0
+        },
+        {
+            "type": "line",
+            "name": "Fuel Used",
+            "connectNulls": false,
+            "symbolSize": 4,
+            "showSymbol": true,
+            "smooth": false,
+            "clip": true,
+            "step": false,
+            "data": [
+                [
+                    "2020-11",
+                    0
+                ],
+                [
+                    "2020-12",
+                    1
+                ],
+                [
+                    "2021-01",
+                    1
+                ],
+                [
+                    "2021-02",
+                    1
+                ],
+                [
+                    "2021-03",
+                    1
+                ],
+                [
+                    "2021-04",
+                    2
+                ],
+                [
+                    "2021-05",
+                    2
+                ],
+                [
+                    "2021-06",
+                    2
+                ],
+                [
+                    "2021-07",
+                    2
+                ],
+                [
+                    "2021-08",
+                    2
+                ],
+                [
+                    "2021-09",
+                    3
+                ]
+            ],
+            "hoverAnimation": true,
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8
+            },
+            "lineStyle": {
+                "show": true,
+                "width": 1,
+                "opacity": 1,
+                "curveness": 0,
+                "type": "solid"
+            },
+            "areaStyle": {
+                "opacity": 0
+            },
+            "zlevel": 0,
+            "z": 0
+        },
+        {
+            "type": "line",
+            "name": "Vehicle Speed",
+            "connectNulls": false,
+            "symbolSize": 4,
+            "showSymbol": true,
+            "smooth": false,
+            "clip": true,
+            "step": false,
+            "data": [
+                [
+                    "2020-11",
+                    7
+                ],
+                [
+                    "2020-12",
+                    12
+                ],
+                [
+                    "2021-01",
+                    36
+                ],
+                [
+                    "2021-02",
+                    40
+                ],
+                [
+                    "2021-03",
+                    64
+                ],
+                [
+                    "2021-04",
+                    4
+                ],
+                [
+                    "2021-05",
+                    7
+                ],
+                [
+                    "2021-06",
+                    10
+                ],
+                [
+                    "2021-07",
+                    29
+                ],
+                [
+                    "2021-08",
+                    60
+                ],
+                [
+                    "2021-09",
+                    77
+                ]
+            ],
+            "hoverAnimation": true,
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8
+            },
+            "lineStyle": {
+                "show": true,
+                "width": 1,
+                "opacity": 1,
+                "curveness": 0,
+                "type": "solid"
+            },
+            "areaStyle": {
+                "opacity": 0
+            },
+            "zlevel": 0,
+            "z": 0
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "Average speed",
+                "Distance_travelled",
+                "Fuel Used",
+                "Vehicle Speed"
+            ],
+            "selected": {
+                "Average speed": true,
+                "Distance_travelled": true,
+                "Fuel Used": true,
+                "Vehicle Speed": true
+            }
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5
+    },
+    "xAxis": [
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            },
+            "data": [
+                "2020-11",
+                "2020-12",
+                "2021-01",
+                "2021-02",
+                "2021-03",
+                "2021-04",
+                "2021-05",
+                "2021-06",
+                "2021-07",
+                "2021-08",
+                "2021-09"
+            ]
+        }
+    ],
+    "yAxis": [
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            }
+        }
+    ]
+};
+        chart_51626cfbb7d747c5a41be79cae6dbf90.setOption(option_51626cfbb7d747c5a41be79cae6dbf90);
+    </script>
+                <div id="8fa9f20f8ad44728b3997b65dce3c448" class="chart-container" style="width:900px; height:500px;"></div>
+    <script>
+        var chart_8fa9f20f8ad44728b3997b65dce3c448 = echarts.init(
+            document.getElementById('8fa9f20f8ad44728b3997b65dce3c448'), 'white', {renderer: 'canvas'});
+        var option_8fa9f20f8ad44728b3997b65dce3c448 = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "color": [
+        "#c23531",
+        "#2f4554",
+        "#61a0a8",
+        "#d48265",
+        "#749f83",
+        "#ca8622",
+        "#bda29a",
+        "#6e7074",
+        "#546570",
+        "#c4ccd3",
+        "#f05b72",
+        "#ef5b9c",
+        "#f47920",
+        "#905a3d",
+        "#fab27b",
+        "#2a5caa",
+        "#444693",
+        "#726930",
+        "#b2d235",
+        "#6d8346",
+        "#ac6767",
+        "#1d953f",
+        "#6950a1",
+        "#918597"
+    ],
+    "series": [
+        {
+            "type": "bar",
+            "name": "Engine_RPM",
+            "legendHoverLink": true,
+            "data": [
+                1615,
+                1919,
+                5405,
+                5938,
+                5844,
+                1724,
+                1707,
+                1846,
+                6345,
+                5803,
+                7169,
+                7574,
+                7411,
+                4865,
+                7536,
+                6045,
+                1724,
+                6783,
+                4563,
+                6463,
+                4707,
+                4108,
+                1742,
+                6909,
+                3608,
+                6298,
+                1736,
+                7062,
+                6222,
+                4669,
+                7071,
+                7259,
+                4698,
+                7552,
+                6859,
+                7426,
+                7276,
+                5854,
+                4636,
+                5030,
+                7162,
+                3761,
+                5209,
+                6696,
+                3672,
+                3320,
+                2218,
+                7066,
+                8202,
+                1758,
+                7101,
+                7690,
+                1797,
+                1715,
+                7334,
+                6117,
+                1648,
+                4943,
+                1714,
+                3804,
+                5096,
+                1750,
+                5591,
+                7237,
+                1710,
+                5423,
+                7129,
+                3793,
+                6550,
+                7583,
+                3538,
+                7149,
+                4632,
+                7238,
+                7251,
+                7589,
+                7472,
+                1749,
+                8492,
+                7014,
+                1739,
+                7091,
+                1679,
+                5388,
+                5672,
+                6992,
+                2698,
+                1768,
+                3927,
+                7029,
+                5821,
+                6762,
+                1650,
+                7805,
+                4604,
+                3993,
+                1681,
+                5850,
+                1692,
+                4432,
+                6072,
+                4105,
+                4740,
+                1728,
+                1780,
+                8171,
+                6951,
+                1699,
+                5073,
+                3558,
+                1742,
+                4197,
+                1670,
+                5244,
+                5667,
+                6931,
+                6570,
+                6193,
+                5402,
+                6452,
+                3218,
+                4978,
+                4757,
+                5573,
+                6501,
+                1709,
+                1606,
+                1797,
+                2534,
+                1760,
+                1606,
+                1811,
+                1766,
+                6530,
+                1799,
+                1817,
+                1709,
+                6426,
+                1782,
+                6579,
+                6503,
+                5618,
+                7317,
+                2682,
+                1660,
+                1771,
+                6169,
+                1739,
+                7061,
+                6279,
+                3946,
+                1589,
+                7162,
+                1789,
+                1783,
+                1746,
+                5165,
+                1698,
+                6118,
+                6265,
+                3045,
+                1728,
+                4582,
+                6043,
+                1717,
+                5124,
+                5529,
+                6061,
+                7363,
+                7704,
+                1706,
+                7607,
+                6282,
+                7074,
+                3956,
+                4195,
+                7036,
+                3878,
+                1811,
+                1717,
+                1742,
+                5734,
+                6366,
+                7581,
+                7245,
+                8054,
+                6235,
+                5957,
+                1637,
+                5965,
+                3806,
+                1720,
+                6963,
+                5412,
+                1656,
+                1620,
+                1697,
+                4905,
+                1655,
+                7316,
+                7388,
+                2493,
+                1763,
+                6910,
+                1675,
+                6955,
+                1355,
+                1648,
+                6567,
+                6170,
+                1791,
+                4243,
+                4558,
+                5034,
+                7390,
+                7463,
+                8476,
+                5885,
+                1741,
+                7378,
+                6698,
+                3237,
+                5287,
+                6842,
+                6488,
+                7405,
+                7128,
+                7211,
+                7045,
+                7613,
+                7178,
+                1664,
+                7275,
+                1773,
+                6086,
+                6560,
+                1727,
+                3827,
+                1608,
+                1667,
+                7462,
+                1738,
+                3849,
+                5264,
+                1749,
+                1770,
+                3728,
+                6335,
+                5893,
+                1729,
+                6058,
+                1808,
+                6000,
+                7475,
+                1712,
+                7106,
+                6778,
+                6671,
+                2211,
+                6788,
+                1708,
+                7893,
+                5386,
+                1762,
+                6936,
+                4288,
+                6186,
+                1814,
+                1710,
+                1758,
+                1794,
+                6482,
+                1678,
+                8659,
+                6316,
+                5993,
+                1760,
+                5534,
+                1702,
+                1659,
+                5213,
+                4330,
+                1643,
+                5020,
+                4992,
+                1714,
+                5302,
+                1715,
+                1695,
+                4642,
+                1742,
+                8339,
+                1773,
+                5033,
+                1767,
+                5074,
+                5717,
+                6647,
+                2134,
+                7028,
+                5765,
+                6589,
+                5352,
+                8257,
+                6436,
+                8666,
+                4862,
+                1722,
+                6859,
+                1825,
+                7092,
+                7126,
+                3523,
+                1767,
+                1675,
+                4343,
+                4641,
+                7690,
+                7703,
+                1661,
+                6869,
+                5895,
+                1750,
+                6480,
+                1668,
+                1667,
+                2104,
+                4099,
+                6784,
+                6996,
+                6870,
+                1620,
+                2231,
+                3963,
+                4219,
+                4045,
+                5958,
+                1792,
+                1799,
+                2123,
+                3712,
+                1663,
+                5589,
+                4537,
+                4192,
+                4997,
+                4358,
+                4374,
+                1730,
+                1716,
+                7504,
+                6279,
+                6302,
+                6479,
+                6892,
+                6014,
+                1692,
+                6826,
+                7010,
+                3880,
+                1775,
+                1811,
+                5591,
+                1818,
+                1675
+            ],
+            "showBackground": false,
+            "barMinHeight": 0,
+            "barCategoryGap": "20%",
+            "barGap": "30%",
+            "large": false,
+            "largeThreshold": 400,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "clip": true,
+            "zlevel": 0,
+            "z": 2,
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "Engine_RPM"
+            ],
+            "selected": {
+                "Engine_RPM": true
+            },
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5
+    },
+    "xAxis": [
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            },
+            "data": [
+                "2020-11",
+                "2020-12",
+                "2021-01",
+                "2021-02",
+                "2021-03",
+                "2021-04",
+                "2021-05",
+                "2021-06",
+                "2021-07",
+                "2021-08",
+                "2021-09"
+            ]
+        }
+    ],
+    "yAxis": [
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            }
+        }
+    ],
+    "title": [
+        {
+            "text": "Engine RPM per month",
+            "padding": 5,
+            "itemGap": 10
+        }
+    ],
+    "dataZoom": [
+        {
+            "show": true,
+            "type": "slider",
+            "realtime": true,
+            "start": 20,
+            "end": 80,
+            "orient": "horizontal",
+            "zoomLock": false,
+            "filterMode": "filter"
+        }
+    ]
+};
+        chart_8fa9f20f8ad44728b3997b65dce3c448.setOption(option_8fa9f20f8ad44728b3997b65dce3c448);
+    </script>
+    </div>
+
+    <script>
+    </script>
+    <script>
+        (function() {
+            containers = document.getElementsByClassName("chart-container");
+            if(containers.length > 0) {
+                containers[0].style.display = "block";
+            }
+        })()
+
+        function showChart(evt, chartID) {
+            let containers = document.getElementsByClassName("chart-container");
+            for (let i = 0; i < containers.length; i++) {
+                containers[i].style.display = "none";
+            }
+
+            let tablinks = document.getElementsByClassName("tablinks");
+            for (let i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = "tablinks";
+            }
+
+            document.getElementById(chartID).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</body>
+</html>
