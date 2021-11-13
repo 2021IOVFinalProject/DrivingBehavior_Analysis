@@ -9,37 +9,29 @@
 		    <div class="col-sm-12 col-md-12 col-lg-9 pb-4">
 		    	<div class="col-6 my-auto">
 		    	<h2 class="font-weight-bold pt-4">Data</h2>
+				<br>
 				<table border="1">
-				<form method="POST">
-					{% csrf_token %}
-				From:<input type = "date" name="startdate"/> to:<input type = "date" name="enddate"/>
-				<button class="btn btn-primary" type="submit">Sumbit</button>
-				<table class="table">
+				<table class="table", style=center>
   					<thead>
     				<tr>
-						<th scope="col">time</th>
-						<th scope="col">Average_speed</th>
-      					<th scope="col">Distance_travelled</th>
-      					<th scope="col">Engine_RPM(rpm)</th>
-						<th scope="col">Fuel_used</th>
-      					<th scope="col">Vehicle_speed</th>
-						<th scope="col">Driver_Type</th>
-						<th scope="col">Insurance_Fee</th>
+						<th scope="col">Date</th>
+      					<th scope="col">Distance travelled(km)</th>
+      					<th scope="col">Average EngineRPM(rpm)</th>
+						<th scope="col">Fuel used(L)</th>
+      					<th scope="col">Average Vehicle speed(km/h)</th>
+						<th scope="col">Driver Risk</th>
     				</tr>
 					{%for result in data%}
 					<tr>
-						<td>{{result.time}}</td>
-						<td>{{result.Average_speed}}</td>
+						<td>{{result.Date}}</td>
 						<td>{{result.Distance_travelled}}</td>
-						<td>{{result.Engine_RPM}}</td>
+						<td>{{result.Average_EngineRPM}}</td>
 						<td>{{result.Fuel_used}}</td>
-						<td>{{result.Vehicle_speed}}</td>
-						<td>{{result.Driver_Type}}</td>
-						<td>{{result.Insurance_Fee}}</td>
+						<td>{{result.Average_Vehiclespeed}}</td>
+						<td>{{result.Driver_Risk}}</td>
 					{% endfor %}						
   					</thead>
 				</table>
-				</form>
 			</div>
 		
 	</div>

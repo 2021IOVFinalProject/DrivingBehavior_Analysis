@@ -41,13 +41,12 @@ class UploadFileForm(forms.Form):
 
 class FileForm(forms.Form):
 	id = forms.IntegerField()
-	date_time= forms.CharField()
-	Average_fuel_consumption = forms.FloatField()
-	Average_speed = forms.FloatField()
+	Date = forms.DateTimeField()
 	Distance_travelled = forms.FloatField()
-	Engine_RPM = forms.FloatField()
+	Average_EngineRPM = forms.IntegerField()
 	Fuel_used = forms.FloatField()
-	Vehicle_speed = forms.FloatField()
+	Average_Vehiclespeed =  forms.FloatField()
+	Driver_Risk = forms.IntegerField()
 
 class DateInput(forms.DateInput):
     input_type = 'date'
