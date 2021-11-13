@@ -155,10 +155,3 @@ STATICFILES_DIRS = [
 IMPORT_EXPORT_USE_TRANSACTIONS = False
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'static/files') # add file downlaod location
-
-# importing logger settings
-try:
-    from .logger_settings import *
-except Exception as e:
-    # in case of any error, pass silently.
-    pass
