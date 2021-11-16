@@ -8,10 +8,10 @@ import seaborn as sb
 from sklearn import metrics
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
-from sklearn.tree import DecisionTreeClassifier, plot_tree
+from sklearn.tree import DecisionTreeClassifier
 
 #Load dataset
-df = pd.read_csv('./MachineLearning/DrivingBehavior_Final_Dataset.csv', index_col = [0])
+df = pd.read_csv('./MachineLearning/DrivingBehavior_Dataset.csv', index_col = [0])
 
 #EDA
 print(df.head())
@@ -63,9 +63,4 @@ plt.title("Confusion Matrix's Heatmap")
 sb.heatmap(conf_df, annot = True, fmt ='d', cmap = 'YlGnBu')
 plt.xlabel("Actual Classification Values")
 plt.ylabel("Predicted Classification Values")
-plt.show()
-
-#Visualizing Decision Tree
-tree_visualization = plot_tree(decision_tree = classifier, feature_names = df.columns,
-        class_names = ["Safe", "Moderate", "Dangerous"], filled = True, precision = 4, rounded = True)
 plt.show()

@@ -11,7 +11,7 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.preprocessing import StandardScaler
 
 #Open dataset
-df = pd.read_csv('./MachineLearning/DrivingBehavior_Final_Dataset.csv', index_col = [0])
+df = pd.read_csv('./MachineLearning/DrivingBehavior_Dataset.csv', index_col = [0])
 #See first 5 rows of dataset
 print(df.head(), '\n')
 #Check datatypes of variables
