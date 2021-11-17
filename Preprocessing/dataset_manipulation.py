@@ -4,14 +4,24 @@
 import pandas as pd
 import numpy as np
 
-df = pd.read_csv('./NewData/Car-Care_Dataset.csv')
-#Drop time column
-df.drop(['time',  'Average speed (km/h)', 'Insurance Fee'], axis = 1, inplace = True)
+df = pd.read_csv('./Preprocessing/NewData/Car-Care_Dataset.csv')
+#Drop some columns
+df.drop(['time',  'Average speed (km/h)', 'Insurance Fee', 'Driver Type'], axis = 1, inplace = True)
 
 #Drop row with N-value
 val_drop = df[df['Distance travelled (km)'] < 2].index
 print(val_drop)
 df.drop(val_drop, inplace = True)
+
+#Add new column
+conditions = [
+    (df['Vehicle speed (km/h)'] >= 0) & (df['Vehicle speed (km/h)'] <= 40),
+    (df['Vehicle speed (km/h)'] > 40) & (df['Vehicle speed (km/h)'] <= 50),
+    (df['Vehicle speed (km/h)'] > 50) & (df['Vehicle speed (km/h)'] <= 60),
+    (df['Vehicle speed (km/h)'] > 60)
+    ]
+values = [0, 1, 2, 3]
+df['Driver Type'] = np.select(conditions, values)
 
 #Add date column
 df['Date'] = pd.date_range(start = '10/01/2020', periods = len(df), freq = 'D')
@@ -44,11 +54,10 @@ datatype = {
 }
 print(df.dtypes)
 
-
 #Drop rows after 09/30/2021
 row_del = df[df['Date'] > '2021/09/30'].index
 print(row_del)
 df.drop(row_del, inplace = True)
 
 #Export to csv file
-df.to_csv('./DrivingBehavior_Dataset.csv', index = True)
+df.to_csv('./Preprocessing/DrivingBehavior_Dataset.csv', index = True)
