@@ -27,12 +27,9 @@ Machine Learning Classification Model (Decision Tree and Naive Bayes Classifier)
     
 ### Features In Dataset
 - Average Vehicle Speed (km/h)
-- Avg Engine RPM (rpm)
-- Maximum Vehicle Speed (km/h)
-- Maximum Engine RPM (rpm)
-- Driving Distance (km)
-- Number of Accelerating
-- Number of HardBraking
+- Average Engine RPM (rpm)
+- Distance travelled (km)
+- Fuel Used (L)
 - Driver Risk
 """)
 
@@ -98,7 +95,7 @@ if menu_select == 'Classification Result':
 
 #Confusion Matrix
         conf_mat = metrics.confusion_matrix(y_test, y_pred)
-        conf_df = pd.DataFrame(conf_mat, index = [1, 2, 3], columns = [1, 2, 3])
+        conf_df = pd.DataFrame(conf_mat, index = [0, 1, 2, 3], columns = [0, 1, 2, 3])
         #print("\nConfusion Matrix of the Model:\n", conf_mat)
         st.subheader("Confusion Matrix of the Classifier")
         st.write(conf_df)
@@ -140,7 +137,7 @@ if menu_select == 'Classification Result':
 
 #Confusion Matrix
         conf_mat = metrics.confusion_matrix(y_test, y_pred)
-        conf_df = pd.DataFrame(conf_mat, index = [1, 2, 3], columns = [1, 2, 3])
+        conf_df = pd.DataFrame(conf_mat, index = [0, 1, 2, 3], columns = [0, 1, 2, 3])
         st.subheader("Confusion Matrix of the Classifier")
         st.write(conf_df)
 
