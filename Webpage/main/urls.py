@@ -19,5 +19,6 @@ urlpatterns = [
     #path("data_prediction", views.data_prediction, name= "data_prediction"),
     path("contact_us", views.contact_us,name="contact_us" ),
     path("ubi_insurance", views.ubi,name="ubi_insurance" ),
+    path("ubi_prediction", views.ubi_prediction,name="ubi_prediction" ),
 
 ]+ static(settings.MEDIA_URL,document_roots=settings.MEDIA_ROOT )
