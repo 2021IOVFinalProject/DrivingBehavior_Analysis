@@ -57,7 +57,7 @@ print('Accuracy of Decision Tree Classifier: %.2f' % score)
 
 #Confusion Matrix
 conf_mat = metrics.confusion_matrix(y_test, y_pred)
-conf_df = pd.DataFrame(conf_mat, index = [1, 2, 3], columns = [1, 2, 3])
+conf_df = pd.DataFrame(conf_mat, index = [0, 1, 2, 3], columns = [0, 1, 2, 3])
 print("\nConfusion Matrix of the Model:\n", conf_mat)
 plt.title("Confusion Matrix's Heatmap")
 sb.heatmap(conf_df, annot = True, fmt ='d', cmap = 'YlGnBu')
