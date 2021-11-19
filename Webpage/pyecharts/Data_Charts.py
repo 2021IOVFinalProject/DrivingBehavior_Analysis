@@ -80,6 +80,27 @@ box.set_global_opts(
             #datazoom_opts=[opts.DataZoomOpts()],
         )
 
+x_axis = ['2020/10', '2020/11', '2020/12', '2021/01', '2021/02', '2021/03', '2021/04', '2021/05', '2021/06', '2021/07', '2021/08', '2021/09']
+
+y_zero = [20, 11, 13, 20, 20, 17, 14, 11, 17, 17, 18, 22]
+y_one = [2, 3, 3, 5, 1, 4, 3, 2, 2, 2, 3, 4]
+y_two = [1, 8, 5, 3, 4, 3, 3, 1, 5, 5, 1, 1]
+y_three = [8, 8, 10, 3, 3, 7, 10, 17, 6, 7, 9, 3]
+
+
+stackedbar = (
+    Bar(init_opts = opts.InitOpts(width='1200px',height='700px'))
+    .add_xaxis(x_axis)
+    .add_yaxis("0", list(y_zero), stack="stack1")
+    .add_yaxis("1", list(y_one), stack="stack1")
+    .add_yaxis("2", list(y_two), stack="stack1")
+    .add_yaxis("3", list(y_three), stack="stack1")
+    .set_global_opts(
+        title_opts=opts.TitleOpts(title="Driver Risk Stacked Bar Chart")
+
+        )
+)
+
 print(driver_risk2.value_counts()) 
 
 data = [('3', 91), ('2', 40), ('1', 34), ('0', 200)]
@@ -100,5 +121,6 @@ tab.add(line, "Line chart")
 tab.add(bar, "Bar chart")
 tab.add(scatter, "Scatter plot")
 tab.add(box, "Boxplot")
+tab.add(stackedbar, "Stacked Bar chart")
 tab.add(pie, "Pie chart")
 tab.render("data_analysis.html")
