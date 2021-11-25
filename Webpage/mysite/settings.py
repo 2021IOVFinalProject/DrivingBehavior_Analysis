@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'crispy_forms',
     'rest_framework',
-    'import_export'
+    'fontawesomefree',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4' # forms 
