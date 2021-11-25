@@ -6,7 +6,7 @@ df = pd.read_csv('./MachineLearning/DrivingBehavior_Dataset.csv', index_col = [1
 print(df.columns)
 
 #Resample dataset
-dist_resample = df.resample('M').sum()['Distance_travelled(km)']
+dist_resample = df.resample('15D').sum()['Distance_travelled(km)']
 print(dist_resample)
 
 ax = dist_resample.plot.bar(color = 'darkblue')
