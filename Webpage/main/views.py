@@ -13,9 +13,6 @@ from os import listdir
 import json
 import pymongo
 from pandas import DataFrame
-from django.http import HttpResponse
-from rest_framework.views import APIView
-from pyecharts.charts import Line, Bar, Tab
 from pyecharts import options as opts
 
 db_handle, mongo_client = get_db_handle('CarCare_DB', 'localhost', 27017, 'USERNAME', 'PASSWORD')
@@ -164,7 +161,6 @@ def data_analysis(request):
 
 	return render(request, "main/data_analysis2.html", {'form':form})
 
-
 def data_analysis2(request):
 	form = DatePickerForm(request.POST)
 	if form.is_valid():
@@ -191,58 +187,12 @@ def ubi(request):
 	# Converting to the DataFrame
 	df = DataFrame(list_data)
 	# print(df['Distance_travelled'])
-	data = sum(df['Distance_travelled'])
-	# print("Total Distance travelled:", sum(df['Distance_travelled']))
-	# Insurance calculation
-	if data >= 3000:
-		fee = '1,170'
-	elif data >= 1000:
-		fee = 975
-	else:
-		fee = 780
-	
-	return render(request, "main/ubi.html", {"data":data, "fee":fee})
+	data = round(sum(df['Distance_travelled']), 2)
+	return render(request, "main/ubi.html", {"data":data})
 
-# pyecharts integration
+def ubi_prediction(request):
 
-df = pd.read_csv('./main/data/User2_Dataset.csv',  index_col = [1], parse_dates = ['Date'])
-average_speed = df['Average_speed']
-distance_travelled = df['Distance_travelled']
-fuel_used = df['Fuel_used']
-vehicle_speed = df['Vehicle_speed']
-engine_rpm = df['Engine_RPM']
-
-x_date = ['2020-11', '2020-12', '2021-01', '2021-02', '2021-03', '2021-04', 
-        '2021-05', '2021-06','2021-07', '2021-08', '2021-09' ]
-
-def linechart()->Line:
-    line = (
-        Line()
-        .add_xaxis(x_date)
-        .add_yaxis("Average speed", average_speed)
-        .add_yaxis("Distance_travelled", distance_travelled)
-        .add_yaxis("Fuel Used", fuel_used)
-        .add_yaxis("Vehicle Speed", vehicle_speed)
-
-        )
-    return line
-
-def barchart()->Bar:
-    c = (
-        Bar()
-        .add_xaxis(x_date)
-        .add_yaxis("Engine_RPM", list(engine_rpm))
-        .set_global_opts(
-            title_opts=opts.TitleOpts(title="Engine RPM per month"),
-            datazoom_opts=[opts.DataZoomOpts()],
-        )
-    )
-    return c
-
-tab = Tab()
-tab.add(linechart(), "Linechart")
-tab.add(barchart(), "Barchart")
-
+	return render(request, "main/ubi_prediction.html")
 
 
 
