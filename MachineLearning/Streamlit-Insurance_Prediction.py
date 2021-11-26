@@ -23,7 +23,7 @@ definition = st.markdown("""
 """)
 
 #Open dataset
-df = pd.read_csv('./Insurance_Dataset.csv')
+df = pd.read_csv('./MachineLearning/Insurance_Dataset.csv')
 #print(df.head())
 
 #Show dataset
