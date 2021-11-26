@@ -53,7 +53,7 @@ if menu_select == 'Exploratory Data Analysis':
     if st.sidebar.checkbox("Show Correlation Heatmap"):
         fig, ax = plt.subplots()
         st.title("Correlation Heatmap")
-        sb.heatmap(dfcorr, cmap = 'YlGnBu', annot = True, ax = ax)
+        sb.heatmap(dfcorr, annot = True, ax = ax)
         st.write(fig)
 
 #Show histogram of features in dataset

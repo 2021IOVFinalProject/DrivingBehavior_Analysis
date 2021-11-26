@@ -46,9 +46,9 @@ df1 = result.head(30)
 df1.plot(kind='bar', figsize=(10, 8))
 plt.title('Actual vs Predicted')
 plt.xlabel('Driving Trip Number')
-plt.ylabel('Driving Distance (km)')
-plt.grid(which='major', linestyle='-', linewidth='0.5', color= 'black')
-plt.grid(which='minor', linestyle=':', linewidth='0.5', color= 'green')
+plt.ylabel('Insurance Premium')
+plt.grid(which='major', linewidth='0.5', color= 'black')
+plt.grid(which='minor', linewidth='0.5', color= 'green')
 plt.show()
 
 #Evaluate model
