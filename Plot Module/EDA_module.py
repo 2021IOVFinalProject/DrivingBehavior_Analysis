@@ -6,7 +6,7 @@ import pandas as pd
 import seaborn as sb
 
 #Open dataset
-df = pd.read_csv('./MachineLearning/DrivingBehavior_Final_Dataset.csv', index_col = [0])
+df = pd.read_csv('./MachineLearning/DrivingBehavior_Dataset.csv', index_col = [0])
 df.drop(['Date', 'Driver_Risk'], axis = 1, inplace = True)
 #print(df.columns)
 
