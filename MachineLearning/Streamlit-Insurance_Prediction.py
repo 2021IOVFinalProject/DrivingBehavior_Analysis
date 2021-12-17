@@ -68,7 +68,7 @@ fig = px.bar(predicted_data, y = ["Actual", "Predicted"], labels = \
         {
                 'index' : 'Driving Trip Number',
                 'value' : 'Insurance Premium'
-        })
+        }, barmode = 'group')
 st.plotly_chart(fig)
 
 #Evaluate model
