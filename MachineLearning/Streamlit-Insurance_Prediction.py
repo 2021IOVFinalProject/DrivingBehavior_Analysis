@@ -23,7 +23,7 @@ definition = st.markdown("""
 """)
 
 #Open dataset
-df = pd.read_csv('./MachineLearning/Insurance_Dataset.csv')
+df = pd.read_csv('./Insurance_Dataset.csv')
 #print(df.head())
 
 #Show dataset
@@ -33,7 +33,7 @@ if st.checkbox("Show Dataset"):
 #Split dataset
 x = df['Distance_travelled(km)'].values.reshape(-1, 1)
 y = df['Insurance_Fee'].values.reshape(-1, 1)
-x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.33, random_state = 100)
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.35, random_state = 20000)
 #print('Shape of x_train: ', x_train.shape, '\nShape of x_test: ', x_test.shape)
 #print('Shape of y_train: ', y_train.shape, '\nShape of y_test: ', y_test.shape)
 
@@ -64,7 +64,7 @@ predicted_data = pd.DataFrame(
                 'Predicted': y_pred.flatten()
         })
 
-fig = px.bar(predicted_data, y = ["Actual", "Predicted"], labels = \
+fig = px.bar(predicted_data, labels = \
         {
                 'index' : 'Driving Trip Number',
                 'value' : 'Insurance Premium'
